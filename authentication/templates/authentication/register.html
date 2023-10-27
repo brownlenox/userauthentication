@@ -1,0 +1,80 @@
+{% extends "authentication/base.html" %}
+
+{% block content%}
+<div class="card h-100 shadow border-0 mt-4 mb-5 me-auto mx-auto w-50">
+    <h3 class="form-title px-3 py-3 text-center">Sign Up</h3>
+    <form method="post" action="/register/">
+
+        {% csrf_token %}
+        
+        <div class="form-group px-3 py-2">
+            <label for="username" class="py-2">Username</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+            </div>
+        </div>
+        <div class="form-group px-3 py-2">
+            <label for="fname" class="py-2">First Name</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+            </div>
+        </div>
+        <div class="form-group px-3 py-2">
+            <label for="lname" class="py-2">Last Name</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div class="form-group px-3 py-2">
+            <label for="email" class="py-2">Email</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="form-group px-3 py-2">
+            <label for="pass1" class="py-2">Password</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Password" required>
+            </div>
+        </div>
+        <div class="form-group px-3 py-2">
+            <label for="pass2" class="py-2">Confirm Password</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm Your Password" required>
+            </div>
+        </div>
+        <div class="input-group-append">
+            <div class="input-group-text bg-transparent border-0">
+                <input type="checkbox" id="showPassword">
+                <label for="showPassword" class="form-check-label ms-2">Show Password</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3 mx-5">Sign Up</button>
+
+        <hr class="my-2 mx-5">
+
+        <div class="text-center">
+            <p>Already have an account? <a href="{% url 'login'%}">Log In</a></p>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

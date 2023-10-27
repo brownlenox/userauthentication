@@ -1,0 +1,17 @@
+.close {
+    position: relative;
+    font-size: 40px;
+    color: rgb(4, 59, 4);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 80%;
+}
+
+.close:hover {
+    color: rgb(2, 12, 2);
+}
+
+#myAlert{
+    margin: 5px;
+}
